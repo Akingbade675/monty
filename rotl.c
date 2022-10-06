@@ -7,11 +7,9 @@
  */
 void rotl(stack_t **stack, unsigned int line_number)
 {
-	stack_t *head, *tail;
-	head = tail = *stack;
+	stack_t *head = *stack, *tail = *stack;
 
-	(void)(line_number);
-
+	(void) line_number;
 	if (head && head->next)
 	{
 		for ( ; tail->next; tail = tail->next)

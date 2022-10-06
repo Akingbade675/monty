@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * sub -  removes the top element of the stack
+ * _mul -  removes the top element of the stack
  * @stack: address of stack
  * @line_number: current line count
  */
-void sub(stack_t **stack, unsigned int line_number)
+void _mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head = *stack, *second;
 

@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * sub -  removes the top element of the stack
+ * _sub -  removes the top element of the stack
  * @stack: address of stack
  * @line_number: current line count
  */
-void sub(stack_t **stack, unsigned int line_number)
+void _sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head = *stack, *second;
 
@@ -13,7 +13,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	{
 		second = head->next;
 
-		second->n = head->n - second->n;
+		second->n = second->n - head->n;
 		second->prev = NULL;
 
 		*stack = second;

@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <ctype.h>
 
 /**
  * pchar -  removes the top element of the stack
@@ -12,7 +11,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	if (head)
 	{
-		if (isascii(head->n) == 0)
+		if (head->n <= 0 || head->n > 127)
 		{
 			fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 			exit(EXIT_FAILURE);
@@ -22,6 +21,6 @@ void pchar(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
-	fprintf(stderr, "L%u: can't pchar stack empty\n", line_number);
+	fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 	exit(EXIT_FAILURE);
 }

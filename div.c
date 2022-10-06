@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * div -  removes the top element of the stack
+ * _div -  removes the top element of the stack
  * @stack: address of stack
  * @line_number: current line count
  */

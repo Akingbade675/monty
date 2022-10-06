@@ -7,8 +7,7 @@
  */
 void rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *head, *tail;
-	head = tail = *stack;
+	stack_t *head = *stack, *tail = *stack;
 
 	(void)(line_number);
 
