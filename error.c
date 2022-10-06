@@ -34,7 +34,7 @@ void malloc_error(void)
  */
 void arg_error(unsigned int line_numb)
 {
-	fprintf(stderr, "L%d: usage: push integer\n", line_numb);
+	fprintf(stderr, "L%u: usage: push integer\n", line_numb);
 	exit(EXIT_FAILURE);
 }
 
@@ -46,6 +46,6 @@ void arg_error(unsigned int line_numb)
 void instruct_error(unsigned int line_num, char *opcode)
 {
 
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_num, opcode);
+	fprintf(stderr, "L%u: unknown instruction %s\n", line_num, opcode);
 	exit(EXIT_FAILURE);
 }
