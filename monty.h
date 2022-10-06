@@ -51,6 +51,7 @@ int is_int(char *str);
 void usage_error(void);
 void file_error(char *err);
 void malloc_error(void);
+void free_stack(stack_t *stack);
 void arg_error(unsigned int line_numb);
 void push(stack_t **stack, unsigned int line_number);
 void instruct_error(unsigned int line_num, char *opcode);
