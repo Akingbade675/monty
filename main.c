@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 		}
 
 		op = strtok(buffer, " \t\n");
-		if (!op)
+		if (!op || *op == '#')
 		{
 			line_cnt++;
 			continue;
