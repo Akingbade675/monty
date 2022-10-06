@@ -58,4 +58,5 @@ void instruct_error(unsigned int line_num, char *opcode);
 void instruction(char *op, stack_t **stack, unsigned int line_num);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 #endif /* MONTY_H */
