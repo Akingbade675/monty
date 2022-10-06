@@ -37,35 +37,45 @@ typedef struct instruction_s
 
 /**
  * struct external - hold the global variables used in the program
+ * @isstack: if opcode is stack or queue
  * @argument: opcode argument
  *
  * Description: global variables
  */
 typedef struct external
 {
+	int isstack;
 	char *argument;
 } external;
 external global;
 
 int is_int(char *str);
+
 void usage_error(void);
 void file_error(char *err);
 void malloc_error(void);
-void free_stack(stack_t *stack);
 void arg_error(unsigned int line_numb);
-void push(stack_t **stack, unsigned int line_number);
 void instruct_error(unsigned int line_num, char *opcode);
+
+void free_stack(stack_t *stack);
+void add_stack(stack_t **stack);
+void add_queue(stack_t **stack);
+
 void instruction(char *op, stack_t **stack, unsigned int line_num);
+
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+
 void swap(stack_t **stack, unsigned int line_number);
-void _add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
+
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);

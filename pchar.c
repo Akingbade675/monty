@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pchar -  removes the top element of the stack
+ * pchar - removes the top element of the stack
  * @stack: address of stack
  * @line_number: current line count
  */
@@ -11,7 +11,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	if (head)
 	{
-		if (head->n <= 0 || head->n > 127)
+		if (head->n > 127 || head->n < 0)
 		{
 			fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 			exit(EXIT_FAILURE);

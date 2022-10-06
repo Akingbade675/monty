@@ -6,7 +6,6 @@
  * main - Entry point
  * @argv: list of argument passed to the program
  * @argc: argument count
- *
  * Return: exit
  */
 int main(int argc, char **argv)
@@ -18,6 +17,7 @@ int main(int argc, char **argv)
 	unsigned int line_cnt = 1;
 
 	global.argument = NULL;
+	global.isstack = 1;
 
 	if (argc != 2)
 		usage_error();
@@ -45,10 +45,8 @@ int main(int argc, char **argv)
 		instruction(op, &head, line_cnt);
 		line_cnt++;
 	}
-
 	free(buffer);
 	free_stack(head);
 	fclose(file);
-
-	exit(EXIT_SUCCESS);
+	return (0);
 }
